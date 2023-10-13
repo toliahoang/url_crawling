@@ -20,6 +20,8 @@ class LinkCollector:
         for link in links:
             self.collected_links.setdefault(link, set())
         unvisited_links = links.difference(self.visited_links)
+        print("unvisited_link: ",unvisited_links)
+        print("visited_link: ",self.visited_links)
         for link in unvisited_links:
             if link.startswith(self.url):
                 self.collect_links(urlparse(link).path)
@@ -32,7 +34,7 @@ class LinkCollector:
         else:
             return self.url + path.rpartition('/')[0] + '/' + link
 
-collector = LinkCollector(url)
-collector.collect_links()
-for link, item in collector.collected_links.items():
-    print("{}: {}".format(link, item))
+# collector = LinkCollector(url)
+# collector.collect_links()
+# for link, item in collector.collected_links.items():
+#     print("{}: {}".format(link, item))

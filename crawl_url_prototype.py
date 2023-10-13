@@ -4,6 +4,7 @@ import re
 LINK_REGEX = re.compile("<a [^>]*href=['\"]([^'\"]+)['\"][^>]*>")
 url = "http://192.168.1.22:8000"
 
+
 class LinkCollector:
     def __init__(self, url):
         self.url = "http://%s" % urlparse(url).netloc
@@ -20,8 +21,7 @@ class LinkCollector:
         for link in links:
             self.collected_links.setdefault(link, set())
         unvisited_links = links.difference(self.visited_links)
-        print("unvisited_link: ",unvisited_links)
-        print("visited_link: ",self.visited_links)
+
         for link in unvisited_links:
             if link.startswith(self.url):
                 self.collect_links(urlparse(link).path)
@@ -34,7 +34,16 @@ class LinkCollector:
         else:
             return self.url + path.rpartition('/')[0] + '/' + link
 
-# collector = LinkCollector(url)
-# collector.collect_links()
-# for link, item in collector.collected_links.items():
-#     print("{}: {}".format(link, item))
+    def write_to_txt(self, filename):
+
+        with open("{}".format(filename), "w") as f:
+            for key, value in self.collected_links.items():
+                f.write(f"{key}:{value}\n")
+
+
+collector = LinkCollector(url)
+collector.collect_links()
+for link, item in collector.collected_links.items():
+    print("{}: {}".format(link, item))
+
+collector.write_to_txt("all_links.txt")

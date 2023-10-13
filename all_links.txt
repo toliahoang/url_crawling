@@ -1,0 +1,11 @@
+http://192.168.1.22:8000/:{'http://www.archlinux.org/', 'http://192.168.1.22:8000/esme.html', 'http://192.168.1.22:8000/blog.html', 'http://192.168.1.22:8000/contact.html', 'http://192.168.1.22:8000/hobbies.html'}
+http://www.archlinux.org/:set()
+http://192.168.1.22:8000/esme.html:{'http://en.wikipedia.org/wiki/Cavalier_King_Charles_Spaniel', 'http://192.168.1.22:8000/hobbies.html'}
+http://192.168.1.22:8000/blog.html:{'http://archlinux.me/dusty/', 'http://192.168.1.22:8000/', 'http://192.168.1.22:8000/contact.html', 'http://192.168.1.22:8000/esme.html'}
+http://192.168.1.22:8000/contact.html:{'http://192.168.1.22:8000/', 'http://192.168.1.22:8000/contact.html', 'http://ccphillips.net/', 'http://192.168.1.22:8000/blog.html'}
+http://192.168.1.22:8000/hobbies.html:{'http://192.168.1.22:8000/', 'http://beluminousyoga.com', 'http://192.168.1.22:8000/esme.html', 'http://192.168.1.22:8000/blog.html', 'http://192.168.1.22:8000/yoga.html'}
+http://en.wikipedia.org/wiki/Cavalier_King_Charles_Spaniel:set()
+http://beluminousyoga.com:set()
+http://192.168.1.22:8000/yoga.html:{'http://beluminousyoga.com'}
+http://archlinux.me/dusty/:set()
+http://ccphillips.net/:set()
